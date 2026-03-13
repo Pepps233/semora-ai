@@ -5,9 +5,10 @@ from typing import List
 class Settings(BaseSettings):
     OPENAI_API_KEY: str
     PINECONE_API_KEY: str
-    PINECONE_INDEX_NAME: str = "semora-labs"
+    PINECONE_INDEX_NAME: str = "semora-ai"
     SUPABASE_URL: str
-    SUPABASE_SERVICE_KEY: str
+    SUPABASE_PUBLISHABLE_KEY: str
+    SUPABASE_SECRET_KEY: str
     SUPABASE_STORAGE_BUCKET: str = "resumes"
     REDIS_URL: str = "redis://localhost:6379"
     DAILY_MATCH_LIMIT: int = 5

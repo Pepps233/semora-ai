@@ -21,6 +21,8 @@ build/
 .DS_Store
 *.log
 .vercel
+.mcp.json
+PLAN.md
 
 # Python
 *.egg-info/
