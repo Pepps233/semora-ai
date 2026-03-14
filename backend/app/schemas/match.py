@@ -14,6 +14,8 @@ class LabMatch(BaseModel):
     research_areas: List[str]
     similarity_score: float
     contact_email: Optional[str] = None
+    description: Optional[str] = None
+    professor_about: Optional[str] = None
 
 
 class MatchResponse(BaseModel):

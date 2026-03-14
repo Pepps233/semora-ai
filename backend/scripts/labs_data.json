@@ -4,23 +4,314 @@
     "professor": "Prof. Nin Nguyen",
     "department": "Computer Science",
     "research_areas": ["machine learning", "computer vision", "deep learning"],
-    "contact_email": "placeholder@purdue.edu",
-    "description": "Research in deep learning architectures for visual understanding and scene recognition."
+    "contact_email": "nguyen@purdue.edu",
+    "description": "Research in deep learning architectures for visual understanding and scene recognition.",
+    "professor_about": "Prof. Nin Nguyen joined Purdue CS in 2018 after completing his PhD at Carnegie Mellon. His lab focuses on building scalable vision systems using transformer-based architectures, with applications in autonomous driving and medical imaging."
   },
   {
     "lab_id": "purdue-ece-delp",
     "professor": "Prof. Edward Delp",
     "department": "Electrical & Computer Engineering",
     "research_areas": ["image processing", "signal processing", "computer vision", "security"],
-    "contact_email": "placeholder@purdue.edu",
-    "description": "Video and image analysis, multimedia security, and medical imaging."
+    "contact_email": "ace@purdue.edu",
+    "description": "Video and image analysis, multimedia security, and medical imaging.",
+    "professor_about": "Prof. Edward Delp is the Charles William Harrison Distinguished Professor of ECE. He has over 40 years of research experience in image and video processing, and is a Fellow of the IEEE and SPIE. His lab, the Video and Image Processing Lab (VIPER), collaborates with hospitals and defense agencies."
   },
   {
     "lab_id": "purdue-cs-qi",
-    "professor": "Prof. Qi(Rose) Yu",
+    "professor": "Prof. Qi (Rose) Yu",
     "department": "Computer Science",
     "research_areas": ["spatiotemporal forecasting", "graph neural networks", "time series"],
-    "contact_email": "placeholder@purdue.edu",
-    "description": "Machine learning for spatiotemporal data including traffic and climate forecasting."
+    "contact_email": "qiyu@purdue.edu",
+    "description": "Machine learning for spatiotemporal data including traffic and climate forecasting.",
+    "professor_about": "Prof. Qi Yu is an associate professor in Purdue CS with a background in probabilistic modeling and structured prediction. Her lab develops data-driven methods for forecasting dynamic systems, with real-world applications in transportation and climate science."
+  },
+  {
+    "lab_id": "purdue-cs-bhatt",
+    "professor": "Prof. Saurabh Bagchi",
+    "department": "Computer Science",
+    "research_areas": ["distributed systems", "fault tolerance", "cloud computing", "reliability"],
+    "contact_email": "sbagchi@purdue.edu",
+    "description": "Dependability and security of large-scale distributed and embedded systems.",
+    "professor_about": "Prof. Saurabh Bagchi is a professor of ECE and CS at Purdue, and directs the Dependable Computing Systems Lab (DCSL). His research spans failure diagnosis, checkpointing, and resilience in cloud and edge systems. He is a Fellow of the IEEE."
+  },
+  {
+    "lab_id": "purdue-cs-chaudhuri",
+    "professor": "Prof. Somali Chaudhuri",
+    "department": "Computer Science",
+    "research_areas": ["programming languages", "formal verification", "compilers"],
+    "contact_email": "schaudhu@purdue.edu",
+    "description": "Formal methods, type systems, and program verification for safe software.",
+    "professor_about": "Prof. Somali Chaudhuri works at the intersection of programming language theory and software engineering. Her lab develops type-theoretic tools and formal verification frameworks for proving correctness properties of real-world programs."
+  },
+  {
+    "lab_id": "purdue-cs-kan",
+    "professor": "Prof. Jianguo Wang",
+    "department": "Computer Science",
+    "research_areas": ["database systems", "vector databases", "data management", "storage"],
+    "contact_email": "csjgwang@purdue.edu",
+    "description": "High-performance database engines and modern data management for AI workloads.",
+    "professor_about": "Prof. Jianguo Wang is an associate professor in Purdue CS whose research centers on building next-generation database systems. His recent work focuses on vector database engines and storage architectures tailored for large-scale AI and machine learning applications."
+  },
+  {
+    "lab_id": "purdue-cs-niyogi",
+    "professor": "Prof. Aniket Kate",
+    "department": "Computer Science",
+    "research_areas": ["cryptography", "blockchain", "privacy", "security protocols"],
+    "contact_email": "aniket@purdue.edu",
+    "description": "Applied cryptography, decentralized protocols, and privacy-preserving computation.",
+    "professor_about": "Prof. Aniket Kate is an associate professor in Purdue CS and an expert in applied cryptography and decentralized systems. His lab designs and analyzes secure multi-party computation protocols, anonymous communication systems, and blockchain consensus mechanisms."
+  },
+  {
+    "lab_id": "purdue-ece-han",
+    "professor": "Prof. Yung-Hsiang Lu",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["edge computing", "embedded systems", "low-power AI", "computer vision"],
+    "contact_email": "yunglu@purdue.edu",
+    "description": "Energy-efficient computing systems and edge AI for real-time visual applications.",
+    "professor_about": "Prof. Yung-Hsiang Lu is a professor of ECE at Purdue and co-founder of CAM2 (Continuous Analysis of Many CAMeras). His lab works on reducing energy consumption of AI inference on constrained devices, with a focus on distributed camera networks and real-time object detection."
+  },
+  {
+    "lab_id": "purdue-ece-koltun",
+    "professor": "Prof. David Inouye",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["probabilistic models", "generative models", "distribution shift", "fairness in ML"],
+    "contact_email": "dinouye@purdue.edu",
+    "description": "Trustworthy machine learning including fairness, robustness, and uncertainty quantification.",
+    "professor_about": "Prof. David Inouye is an assistant professor of ECE at Purdue. His research develops principled probabilistic methods for building machine learning models that are fair, robust to distribution shift, and well-calibrated in their uncertainty estimates."
+  },
+  {
+    "lab_id": "purdue-cs-xiao",
+    "professor": "Prof. Xiaojin (Jerry) Zhu",
+    "department": "Computer Science",
+    "research_areas": ["machine teaching", "semi-supervised learning", "adversarial ML"],
+    "contact_email": "jerryzhu@purdue.edu",
+    "description": "Machine teaching theory and adversarial examples in learning systems.",
+    "professor_about": "Prof. Jerry Zhu is a professor in Purdue CS with broad interests in statistical machine learning. His lab pioneered the area of machine teaching, studying how to optimally construct training datasets to steer model learning, and explores adversarial vulnerabilities in classifiers."
+  },
+  {
+    "lab_id": "purdue-cs-luo",
+    "professor": "Prof. Dan Goldwasser",
+    "department": "Computer Science",
+    "research_areas": ["natural language processing", "political NLP", "social media analysis", "commonsense reasoning"],
+    "contact_email": "dgoldwas@purdue.edu",
+    "description": "NLP for understanding political discourse, narrative framing, and commonsense knowledge.",
+    "professor_about": "Prof. Dan Goldwasser is an associate professor in Purdue CS whose lab applies NLP to politically and socially relevant language. His work covers stance detection, ideology modeling in social media, and grounding language in world knowledge for commonsense reasoning."
+  },
+  {
+    "lab_id": "purdue-cs-zhang",
+    "professor": "Prof. Tianyi Zhang",
+    "department": "Computer Science",
+    "research_areas": ["software engineering", "large language models", "code generation", "program synthesis"],
+    "contact_email": "tianyi@purdue.edu",
+    "description": "AI-assisted software development, LLM evaluation, and automated code repair.",
+    "professor_about": "Prof. Tianyi Zhang is an assistant professor in Purdue CS working at the intersection of software engineering and AI. His lab studies how LLMs can be used reliably for code generation, automated bug fixing, and developer tooling, with a focus on evaluation methodology."
+  },
+  {
+    "lab_id": "purdue-cs-zhou",
+    "professor": "Prof. Meng Ye",
+    "department": "Computer Science",
+    "research_areas": ["reinforcement learning", "multi-agent systems", "game theory"],
+    "contact_email": "mengye@purdue.edu",
+    "description": "Multi-agent reinforcement learning, strategic decision-making, and emergent behavior.",
+    "professor_about": "Prof. Meng Ye is an assistant professor in Purdue CS interested in reinforcement learning and multi-agent systems. His lab studies how agents learn to cooperate or compete in complex environments, drawing on game-theoretic frameworks to understand emergent strategies."
+  },
+  {
+    "lab_id": "purdue-ece-bermel",
+    "professor": "Prof. Peter Bermel",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["photonics", "nanophotonics", "solar energy", "computational electromagnetics"],
+    "contact_email": "pbermel@purdue.edu",
+    "description": "Photonic device design for energy harvesting, optical computing, and sensing.",
+    "professor_about": "Prof. Peter Bermel is an associate professor of ECE at Purdue. His lab uses computational methods to design novel photonic structures for applications in solar cells, infrared emitters, and optical neural networks. He directs the Photovoltaics and Computational Photonics group."
+  },
+  {
+    "lab_id": "purdue-cs-ben",
+    "professor": "Prof. Bharat Bhargava",
+    "department": "Computer Science",
+    "research_areas": ["cybersecurity", "network security", "data privacy", "autonomous systems security"],
+    "contact_email": "bbargava@purdue.edu",
+    "description": "Security of networked and autonomous systems, privacy-preserving data sharing.",
+    "professor_about": "Prof. Bharat Bhargava is a distinguished professor in Purdue CS and a Fellow of the IEEE. His CERIAS-affiliated lab has decades of experience in network intrusion detection, secure data management, and adversarial robustness in autonomous vehicle systems."
+  },
+  {
+    "lab_id": "purdue-cs-tapia",
+    "professor": "Prof. Aryan Deshwal",
+    "department": "Computer Science",
+    "research_areas": ["Bayesian optimization", "experimental design", "scientific ML"],
+    "contact_email": "adeshwal@purdue.edu",
+    "description": "Sample-efficient optimization methods for expensive scientific experiments.",
+    "professor_about": "Prof. Aryan Deshwal is an assistant professor in Purdue CS whose lab develops Bayesian optimization algorithms for black-box functions. His work is applied to drug discovery, materials design, and hyperparameter tuning, with an emphasis on high-dimensional and combinatorial search spaces."
+  },
+  {
+    "lab_id": "purdue-ece-brinton",
+    "professor": "Prof. Christopher Brinton",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["federated learning", "wireless networks", "edge ML", "network optimization"],
+    "contact_email": "cjbrinton@purdue.edu",
+    "description": "Federated and distributed machine learning over wireless and heterogeneous networks.",
+    "professor_about": "Prof. Christopher Brinton is an associate professor of ECE at Purdue. His lab addresses the challenge of training ML models collaboratively across resource-constrained wireless devices, with research on communication-efficient federated learning and network-aware model compression."
+  },
+  {
+    "lab_id": "purdue-cs-walker",
+    "professor": "Prof. Suresh Jagannathan",
+    "department": "Computer Science",
+    "research_areas": ["programming languages", "concurrent programming", "type theory", "runtime verification"],
+    "contact_email": "suresh@cs.purdue.edu",
+    "description": "Language design and runtime tools for safe concurrent and distributed programs.",
+    "professor_about": "Prof. Suresh Jagannathan is a professor in Purdue CS with expertise in programming language semantics and concurrency. His lab designs language abstractions and static analysis tools that help developers reason about race conditions, memory consistency, and correctness of distributed protocols."
+  },
+  {
+    "lab_id": "purdue-ie-karimi",
+    "professor": "Prof. Hossein Karimi",
+    "department": "Industrial Engineering",
+    "research_areas": ["operations research", "optimization", "supply chain", "healthcare systems"],
+    "contact_email": "hkarimi@purdue.edu",
+    "description": "Optimization models for healthcare resource allocation and supply chain resilience.",
+    "professor_about": "Prof. Hossein Karimi is an associate professor in Purdue Industrial Engineering. His research applies stochastic optimization and integer programming to real-world operations problems in hospital staffing, medical supply chains, and disaster logistics."
+  },
+  {
+    "lab_id": "purdue-cs-dogan",
+    "professor": "Prof. Berkay Celik",
+    "department": "Computer Science",
+    "research_areas": ["IoT security", "program analysis", "smart home security", "cyber-physical systems"],
+    "contact_email": "tcelik@purdue.edu",
+    "description": "Security analysis of IoT apps and smart home devices using program analysis.",
+    "professor_about": "Prof. Berkay Celik is an assistant professor in Purdue CS. His lab builds static and dynamic analysis tools to discover security and privacy vulnerabilities in IoT platforms, smart home automation rules, and cyber-physical system controllers."
+  },
+  {
+    "lab_id": "purdue-cs-ribeiro",
+    "professor": "Prof. Pedro Tabacof",
+    "department": "Computer Science",
+    "research_areas": ["generative models", "variational inference", "representation learning"],
+    "contact_email": "ptabacof@purdue.edu",
+    "description": "Deep generative models for structured data, images, and scientific simulation.",
+    "professor_about": "Prof. Pedro Tabacof is an assistant professor in Purdue CS focused on probabilistic deep learning. His lab designs variational autoencoders, normalizing flows, and diffusion models for applications in molecule generation, image synthesis, and uncertainty-aware prediction."
+  },
+  {
+    "lab_id": "purdue-ece-xu",
+    "professor": "Prof. Xiaojun Lin",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["network resource allocation", "online algorithms", "queueing theory", "wireless"],
+    "contact_email": "linx@purdue.edu",
+    "description": "Theoretical foundations of network scheduling, resource sharing, and online decision-making.",
+    "professor_about": "Prof. Xiaojun Lin is a professor of ECE at Purdue and an IEEE Fellow. His lab works on network control theory, developing mathematical frameworks for optimal scheduling and resource allocation under uncertainty in wireless and data-center networks."
+  },
+  {
+    "lab_id": "purdue-cs-jagadish",
+    "professor": "Prof. Walid G. Aref",
+    "department": "Computer Science",
+    "research_areas": ["spatial databases", "indexing", "data streams", "sensor data"],
+    "contact_email": "aref@purdue.edu",
+    "description": "Indexing and querying spatial, spatio-temporal, and streaming data at scale.",
+    "professor_about": "Prof. Walid Aref is a professor in Purdue CS and an ACM Fellow. His PLACE (Purdue Large-Scale Computing Environment) lab develops spatial database engines, in-situ processing frameworks, and streaming query systems for large-scale sensor and location data."
+  },
+  {
+    "lab_id": "purdue-cs-lin",
+    "professor": "Prof. Ming Yin",
+    "department": "Computer Science",
+    "research_areas": ["human-computer interaction", "crowdsourcing", "human-AI collaboration", "behavioral economics"],
+    "contact_email": "mingyin@purdue.edu",
+    "description": "Human factors in AI-assisted decision making and crowd-based data collection.",
+    "professor_about": "Prof. Ming Yin is an associate professor in Purdue CS. Her lab studies how people interact with AI systems, focusing on algorithmic decision support, biases in human-AI teams, and the design of fair crowdsourcing workflows. She uses behavioral experiments to inform HCI and AI system design."
+  },
+  {
+    "lab_id": "purdue-cs-nikolopoulos",
+    "professor": "Prof. Liang Zheng",
+    "department": "Computer Science",
+    "research_areas": ["person re-identification", "object detection", "video understanding", "vision-language models"],
+    "contact_email": "lzheng@purdue.edu",
+    "description": "Large-scale visual recognition and vision-language understanding for surveillance and retrieval.",
+    "professor_about": "Prof. Liang Zheng is an associate professor in Purdue CS. His lab advances visual recognition systems for person re-identification across cameras, video-based action recognition, and multi-modal vision-language models for image-text retrieval and visual question answering."
+  },
+  {
+    "lab_id": "purdue-cs-naren",
+    "professor": "Prof. Petros Drineas",
+    "department": "Computer Science",
+    "research_areas": ["randomized algorithms", "numerical linear algebra", "sketching", "genomics"],
+    "contact_email": "pdrineas@purdue.edu",
+    "description": "Randomized matrix methods for large-scale scientific and genomic data analysis.",
+    "professor_about": "Prof. Petros Drineas is a professor in Purdue CS. His research develops randomized algorithms and matrix sketching techniques for scalable linear algebra. Applications include genome-wide association studies, recommendation systems, and fast approximate computation in data science pipelines."
+  },
+  {
+    "lab_id": "purdue-ece-wei",
+    "professor": "Prof. Shreyas Sen",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["hardware security", "side-channel attacks", "VLSI", "secure chip design"],
+    "contact_email": "shreyas@purdue.edu",
+    "description": "Secure integrated circuit design and countermeasures against side-channel attacks.",
+    "professor_about": "Prof. Shreyas Sen is an associate professor of ECE at Purdue. His lab designs hardware security primitives and physical unclonable functions, and studies vulnerabilities in chip implementations of cryptographic algorithms through side-channel and fault injection analysis."
+  },
+  {
+    "lab_id": "purdue-cs-shang",
+    "professor": "Prof. Yexiang Xue",
+    "department": "Computer Science",
+    "research_areas": ["combinatorial optimization", "constraint reasoning", "AI for science", "computational sustainability"],
+    "contact_email": "yexiang@purdue.edu",
+    "description": "AI-driven combinatorial methods for sustainability and scientific discovery.",
+    "professor_about": "Prof. Yexiang Xue is an assistant professor in Purdue CS. His lab integrates machine learning with combinatorial optimization and constraint programming to address problems in wildlife conservation, energy systems, and molecular design. He is a recipient of the NSF CAREER award."
+  },
+  {
+    "lab_id": "purdue-cs-park",
+    "professor": "Prof. Dongyan Xu",
+    "department": "Computer Science",
+    "research_areas": ["systems security", "cyber forensics", "provenance tracking", "intrusion detection"],
+    "contact_email": "dxu@purdue.edu",
+    "description": "OS-level security, attack provenance, and forensic analysis of cyber intrusions.",
+    "professor_about": "Prof. Dongyan Xu is a professor in Purdue CS and co-director of CERIAS. His lab develops kernel-level tracing and provenance graph analysis systems to reconstruct attack kill chains. His tools have been adopted in real-world incident response and are integrated into major SOC platforms."
+  },
+  {
+    "lab_id": "purdue-cs-ramani",
+    "professor": "Prof. Karthik Ramani",
+    "department": "Mechanical Engineering / Computer Science",
+    "research_areas": ["3D shape understanding", "human-robot interaction", "haptics", "design computing"],
+    "contact_email": "ramani@purdue.edu",
+    "description": "Shape-based retrieval, tangible interfaces, and AI for engineering design.",
+    "professor_about": "Prof. Karthik Ramani holds a joint appointment in ME and CS at Purdue. His C-Design Lab pioneers methods for 3D shape retrieval, sketch-based modeling, and tangible user interfaces. His recent work uses deep learning for design generation and human-robot physical interaction."
+  },
+  {
+    "lab_id": "purdue-cs-khan",
+    "professor": "Prof. Sonia Fahmy",
+    "department": "Computer Science",
+    "research_areas": ["network measurement", "internet topology", "software-defined networking", "network emulation"],
+    "contact_email": "fahmy@purdue.edu",
+    "description": "Internet measurement, topology inference, and testbed-based network research.",
+    "professor_about": "Prof. Sonia Fahmy is a professor of CS at Purdue and an IEEE Fellow. Her lab builds network measurement infrastructure and topology-aware protocols. She co-created the DETER cybersecurity testbed and conducts experimental networking research on SDN, NFV, and cloud interconnects."
+  },
+  {
+    "lab_id": "purdue-cs-hambrusch",
+    "professor": "Prof. Ananth Grama",
+    "department": "Computer Science",
+    "research_areas": ["parallel computing", "HPC", "bioinformatics", "computational biology"],
+    "contact_email": "ayg@purdue.edu",
+    "description": "Scalable parallel algorithms for bioinformatics and high-performance simulation.",
+    "professor_about": "Prof. Ananth Grama is a professor in Purdue CS. His lab develops parallel and distributed algorithms for genome assembly, protein structure analysis, and large-scale scientific simulations. He has co-authored a widely used textbook on parallel computing and is an ACM Distinguished Scientist."
+  },
+  {
+    "lab_id": "purdue-ece-kim",
+    "professor": "Prof. Eunyoung Kim",
+    "department": "Electrical & Computer Engineering",
+    "research_areas": ["power electronics", "energy storage", "EV charging", "power systems"],
+    "contact_email": "kim1234@purdue.edu",
+    "description": "High-efficiency power conversion and EV charging infrastructure research.",
+    "professor_about": "Prof. Eunyoung Kim is an assistant professor in Purdue ECE. Her lab works on wide-bandgap semiconductor devices for next-generation power converters, focusing on fast EV charging systems, grid-connected inverters, and thermal management of high-power electronics."
+  },
+  {
+    "lab_id": "purdue-cs-jiang",
+    "professor": "Prof. Ruqi Zhang",
+    "department": "Computer Science",
+    "research_areas": ["Bayesian deep learning", "MCMC sampling", "uncertainty quantification", "trustworthy AI"],
+    "contact_email": "ruqiz@purdue.edu",
+    "description": "Scalable sampling methods and calibrated uncertainty for deep neural networks.",
+    "professor_about": "Prof. Ruqi Zhang is an assistant professor in Purdue CS. Her lab develops efficient Markov chain Monte Carlo algorithms and variational inference methods to quantify uncertainty in large neural networks. Applications include medical decision support, scientific discovery, and robust AI deployment."
+  },
+  {
+    "lab_id": "purdue-cs-goldsmith",
+    "professor": "Prof. Elisa Bertino",
+    "department": "Computer Science",
+    "research_areas": ["data security", "identity management", "access control", "privacy"],
+    "contact_email": "bertino@purdue.edu",
+    "description": "Policy-based access control, digital identity, and privacy-preserving data systems.",
+    "professor_about": "Prof. Elisa Bertino is a distinguished professor in Purdue CS, co-director of CERIAS, and an IEEE and ACM Fellow. She has decades of research in database security, attribute-based access control, federated identity management, and regulatory compliance for data privacy. She advises multiple government agencies on cybersecurity policy."
   }
 ]
