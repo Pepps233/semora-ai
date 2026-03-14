@@ -23,6 +23,7 @@ build/
 .vercel
 .mcp.json
 PLAN.md
+CLAUDE.md
 
 # Python
 *.egg-info/
