@@ -77,6 +77,8 @@ async def query_similar_labs(
                 research_areas=meta.get("research_areas", []),
                 similarity_score=round(match.score, 4),
                 contact_email=meta.get("contact_email"),
+                description=meta.get("description"),
+                professor_about=meta.get("professor_about"),
             )
         )
     return matches
