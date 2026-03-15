@@ -1,16 +1,14 @@
 # Semora AI
 
-AI-powered research lab matching for Purdue University students.
+## Project Description:
 
-## Structure
-
-```
-semora/
-├── frontend/    # Next.js (TypeScript) + Tailwind + shadcn/ui
-├── backend/     # FastAPI (Python) + Uvicorn
-├── infra/       # Docker, deployment configs
-└── .github/     # CI/CD workflows
-```
+This project is an AI-powered web application for students at Purdue University that enables one-click PDF resume uploads,
+automatically parses and structures resume data (skills, coursework, research, projects), and semantically matches students
+to relevant research labs and professors based on their experience and desired roles. The system includes a Purdue-specific
+research lab database, an embeddings-based recommendation engine powered by vector similarity search, and an AI email
+personalization generator that produces tailored outreach openings referencing each lab’s research focus. The application
+does **not require user login**; instead, it enforces daily usage limits (e.g., match generations per IP/device) through
+backend rate limiting and request tracking within the stack.
 
 ## Quick Start
 
@@ -24,8 +22,7 @@ npm run dev
 ### Backend
 ```bash
 cd backend
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+source .venv/bin/activate
 uvicorn app.main:app --reload
 ```
 
@@ -34,7 +31,7 @@ uvicorn app.main:app --reload
 See `frontend/.env.example` and `backend/.env.example` for required keys.
 
 # Project Structure
-
+```
 semora/
 ├── PLAN.md                          ← 9-step implementation plan
 ├── .gitignore
@@ -65,3 +62,4 @@ semora/
 │       └── labs_data.json           ← Purdue lab starter data
 ├── frontend/                        ← (to be scaffolded in Step 1)
 └── infra/docker-compose.yml
+```
