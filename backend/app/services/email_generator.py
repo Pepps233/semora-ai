@@ -1,35 +1,29 @@
 """GPT-4o personalized email opening generator."""
+import json
 from openai import AsyncOpenAI
 from app.core.config import settings
 from app.schemas.resume import ParsedResume
 from app.schemas.email import EmailResponse
+from app.services.prompts.email_opening import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
 
 client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-
-SYSTEM_PROMPT = """You are an expert academic outreach writer helping a Purdue University student reach out to a research lab.
-Write a personalized, professional 3-4 sentence email opening that:
-1. Mentions the professor by name and their specific research area
-2. Highlights 1-2 of the student's most relevant skills or experiences
-3. Expresses genuine interest in the lab's work
-4. Does NOT include subject line in the body
-
-Also provide a compelling subject line separately.
-Return JSON with keys: opening (string), subject_line (string)."""
 
 
 async def generate_opening(
     parsed: ParsedResume, lab_meta: dict, lab_id: str
 ) -> EmailResponse:
-    user_prompt = f"""Student profile:
-- Skills: {', '.join(parsed.skills[:8])}
-- Research: {', '.join(parsed.research[:3])}
-- Projects: {', '.join(parsed.projects[:2])}
-
-Lab info:
-- Professor: {lab_meta.get('professor')}
-- Department: {lab_meta.get('department')}
-- Research areas: {', '.join(lab_meta.get('research_areas', []))}
-- Description: {lab_meta.get('description', '')}"""
+    user_prompt = USER_PROMPT_TEMPLATE.format(
+        name=parsed.name or "the student",
+        skills=", ".join(parsed.skills[:8]),
+        research=", ".join(parsed.research[:3]),
+        projects=", ".join(parsed.projects[:2]),
+        desired_roles=", ".join(parsed.desired_roles[:3]),
+        professor=lab_meta.get("professor", ""),
+        department=lab_meta.get("department", ""),
+        research_areas=", ".join(lab_meta.get("research_areas", [])),
+        description=lab_meta.get("description", ""),
+        professor_about=lab_meta.get("professor_about", ""),
+    )
 
     response = await client.chat.completions.create(
         model="gpt-4o",
@@ -39,7 +33,6 @@ Lab info:
         ],
         response_format={"type": "json_object"},
     )
-    import json
     data = json.loads(response.choices[0].message.content)
     return EmailResponse(
         lab_id=lab_id,
