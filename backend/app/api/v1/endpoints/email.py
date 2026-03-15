@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Request, HTTPException
+from fastapi import APIRouter, Request, HTTPException  # Request kept for future middleware use
 from app.schemas.email import EmailRequest, EmailResponse
 from app.schemas.resume import ParsedResume
-from app.core.rate_limit import check_rate_limit
+from app.core.rate_limit import check_session_rate_limit
 from app.core.config import settings
 from app.core.supabase import get_supabase
 from app.services.email_generator import generate_opening
@@ -12,7 +12,7 @@ router = APIRouter()
 @router.post("/generate", response_model=EmailResponse)
 async def generate_email(request: Request, body: EmailRequest):
     """Generate a personalized outreach email opening for a lab."""
-    await check_rate_limit(request, "email", settings.DAILY_EMAIL_LIMIT)
+    await check_session_rate_limit(body.session_id, "email", settings.DAILY_EMAIL_LIMIT)
 
     supabase = get_supabase()
 

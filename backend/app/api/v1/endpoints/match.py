@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException
 from app.schemas.match import MatchRequest, MatchResponse, LabMatch
 from app.schemas.resume import ParsedResume
-from app.core.rate_limit import check_rate_limit
+from app.core.rate_limit import check_session_rate_limit
 from app.core.config import settings
 from app.core.supabase import get_supabase
 from app.services.embeddings import query_similar_labs
@@ -21,7 +21,7 @@ RETURN_TOP = 5
 @router.post("/", response_model=MatchResponse)
 async def match_labs(request: Request, body: MatchRequest):
     """Return top ranked research lab matches for a parsed resume."""
-    await check_rate_limit(request, "match", settings.DAILY_MATCH_LIMIT)
+    await check_session_rate_limit(body.session_id, "match", settings.DAILY_MATCH_LIMIT)
 
     supabase = get_supabase()
     result = (

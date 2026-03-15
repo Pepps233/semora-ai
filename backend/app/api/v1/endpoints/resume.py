@@ -2,7 +2,6 @@ from fastapi import APIRouter, UploadFile, File, BackgroundTasks, Request, HTTPE
 from app.schemas.resume import ResumeUploadResponse, ResumeStatusResponse, ParsedResume
 from app.core.config import settings
 from app.core.supabase import get_supabase
-from app.core.rate_limit import peek_rate_limit
 from app.services.pdf_parser import extract_text
 import uuid
 
@@ -18,8 +17,6 @@ async def upload_resume(
     file: UploadFile = File(...),
 ):
     """Upload a PDF resume. Stores the file, then parses and embeds in background."""
-    await peek_rate_limit(request, "match", settings.DAILY_MATCH_LIMIT)
-
     if file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Only PDF files are accepted.")
 
