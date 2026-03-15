@@ -6,6 +6,11 @@ from app.core.config import settings
 from app.core.supabase import get_supabase
 from app.services.embeddings import query_similar_labs
 from typing import List
+from pydantic import BaseModel
+
+
+class StatsResponse(BaseModel):
+    total_matches: int
 
 router = APIRouter()
 
@@ -63,3 +68,16 @@ async def match_labs(request: Request, body: MatchRequest):
     }).execute()
 
     return MatchResponse(session_id=body.session_id, matches=top)
+
+
+@router.get("/stats", response_model=StatsResponse)
+async def match_stats():
+    """Return total number of match events across all sessions."""
+    supabase = get_supabase()
+    result = (
+        supabase.table("match_logs")
+        .select("*", count="exact")
+        .limit(1)
+        .execute()
+    )
+    return StatsResponse(total_matches=result.count or 0)

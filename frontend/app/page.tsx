@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 const POLL_INTERVAL = 2000;
@@ -178,6 +179,9 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Match counter */}
+        <MatchCounter />
+
         {/* Upload card */}
         <div className="fade-up fade-up-delay-4" style={{ width: "100%" }}>
           {state === "error" ? (
@@ -288,6 +292,63 @@ export default function Home() {
         </span>
       </footer>
     </main>
+  );
+}
+
+function MatchCounter() {
+  const { data } = useQuery<{ total_matches: number }>({
+    queryKey: ["match-stats"],
+    queryFn: async () => {
+      const res = await fetch(`${API_URL}/api/v1/match/stats`);
+      if (!res.ok) throw new Error("Failed to fetch stats");
+      return res.json();
+    },
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const count = data?.total_matches;
+
+  return (
+    <div
+      className="fade-up fade-up-delay-3"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "0.6rem",
+        marginBottom: "2rem",
+      }}
+    >
+      <span style={{
+        display: "inline-block",
+        width: "6px",
+        height: "6px",
+        borderRadius: "50%",
+        backgroundColor: "var(--gold)",
+        flexShrink: 0,
+      }} />
+      <span style={{
+        fontSize: "0.75rem",
+        color: "var(--muted-foreground)",
+        letterSpacing: "0.04em",
+      }}>
+        {count !== undefined ? (
+          <>
+            <span style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "0.85rem",
+              color: "var(--foreground)",
+              fontStyle: "italic",
+            }}>
+              {count.toLocaleString()}
+            </span>
+            {" "}research matches made
+          </>
+        ) : (
+          <span style={{ opacity: 0.4 }}>loading...</span>
+        )}
+      </span>
+    </div>
   );
 }
 
