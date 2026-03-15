@@ -30,10 +30,7 @@ async def generate_email(request: Request, body: EmailRequest):
             detail="Session not found or resume not yet parsed.",
         )
 
-    parsed = ParsedResume(
-        session_id=body.session_id,
-        **session_result.data["parsed_resume"],
-    )
+    parsed = ParsedResume(**session_result.data["parsed_resume"])
 
     # Fetch lab metadata from Supabase
     lab_result = (

@@ -33,10 +33,7 @@ async def match_labs(request: Request, body: MatchRequest):
             detail="Session not found or resume not yet parsed.",
         )
 
-    parsed = ParsedResume(
-        session_id=body.session_id,
-        **result.data["parsed_resume"],
-    )
+    parsed = ParsedResume(**result.data["parsed_resume"])
 
     # Override desired_roles if caller provides them
     if body.desired_roles:

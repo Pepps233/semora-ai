@@ -64,7 +64,7 @@ async def get_resume_status(session_id: str):
     return ResumeStatusResponse(
         session_id=session_id,
         status="done",
-        parsed=ParsedResume(session_id=session_id, **parsed_resume),
+        parsed=ParsedResume(**parsed_resume),
     )
 
 
