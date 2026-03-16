@@ -265,165 +265,130 @@ function LabCard({ lab, isBest, onGenerateEmail }: { lab: LabMatch; isBest: bool
   const scorePercent = Math.round(lab.similarity_score * 100);
 
   return (
-    <div className="flip-card" style={{ height: "220px" }}>
-      <div className="flip-card-inner">
-        {/* Front */}
-        <div className="flip-card-front" style={{
-          backgroundColor: "var(--card)",
-          border: isBest ? "1.5px solid var(--gold)" : "1px solid var(--border)",
-          padding: "1.75rem 2rem",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}>
-          <div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.2rem" }}>
-                  <p style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.1rem",
-                    fontWeight: 400,
-                    color: "var(--foreground)",
-                  }}>
-                    {lab.professor}
-                  </p>
-                  {isBest && (
-                    <span style={{
-                      fontSize: "0.65rem",
-                      fontWeight: 600,
-                      color: "var(--gold)",
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.25rem",
-                    }}>
-                      ★ Best Match
-                    </span>
-                  )}
-                </div>
-                <p style={{ fontSize: "0.78rem", color: "var(--muted-foreground)" }}>
-                  {lab.department}
-                </p>
-              </div>
-              <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-end",
-                gap: "4px",
-              }}>
-                <span style={{
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                  color: scorePercent >= 70 ? "var(--gold)" : "var(--foreground)",
-                  letterSpacing: "-0.02em",
-                }}>
-                  {scorePercent}%
-                </span>
-                <span style={{ fontSize: "0.65rem", color: "var(--muted-foreground)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  match
-                </span>
-              </div>
-            </div>
-
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginTop: "1rem" }}>
-              {lab.research_areas.slice(0, 4).map((area) => (
-                <span key={area} style={{
-                  fontSize: "0.7rem",
-                  padding: "0.2rem 0.6rem",
-                  backgroundColor: "var(--muted)",
-                  borderRadius: "999px",
-                  color: "var(--muted-foreground)",
-                  fontWeight: 500,
-                }}>
-                  {area}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span style={{
-              fontSize: "0.72rem",
-              color: "var(--muted-foreground)",
-              fontStyle: "italic",
-            }}>
-              Hover to read more
-            </span>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 6h8M6 2l4 4-4 4" stroke="var(--muted-foreground)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-        </div>
-
-        {/* Back */}
-        <div className="flip-card-back" style={{
-          backgroundColor: "var(--foreground)",
-          padding: "1.75rem 2rem",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}>
-          <div>
+    <div style={{
+      backgroundColor: "var(--card)",
+      border: isBest ? "1.5px solid var(--gold)" : "1px solid var(--border)",
+      borderRadius: "var(--radius)",
+      padding: "1.75rem 2rem",
+      display: "flex",
+      flexDirection: "column",
+      gap: "1rem",
+    }}>
+      {/* Header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.2rem" }}>
             <p style={{
               fontFamily: "var(--font-serif)",
-              fontSize: "0.95rem",
+              fontSize: "1.1rem",
               fontWeight: 400,
-              color: "#fff",
-              marginBottom: "0.75rem",
+              color: "var(--foreground)",
             }}>
               {lab.professor}
             </p>
-            <p style={{
-              fontSize: "0.78rem",
-              color: "rgba(255,255,255,0.65)",
-              lineHeight: 1.65,
-              display: "-webkit-box",
-              WebkitLineClamp: 4,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}>
-              {lab.professor_about || lab.description || "No additional information available."}
-            </p>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            {lab.contact_email && (
-              <a
-                href={`mailto:${lab.contact_email}`}
-                style={{
-                  fontSize: "0.75rem",
-                  color: "rgba(255,255,255,0.5)",
-                  textDecoration: "none",
-                }}
-              >
-                {lab.contact_email}
-              </a>
-            )}
-            <button
-              onClick={(e) => { e.stopPropagation(); onGenerateEmail(); }}
-              style={{
-                display: "inline-flex",
+            {isBest && (
+              <span style={{
+                fontSize: "0.65rem",
+                fontWeight: 600,
+                color: "var(--gold)",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                display: "flex",
                 alignItems: "center",
-                gap: "0.4rem",
-                height: "32px",
-                padding: "0 1rem",
-                fontSize: "0.75rem",
-                fontWeight: 500,
-                fontFamily: "var(--font-sans)",
-                color: "var(--foreground)",
-                backgroundColor: "#fff",
-                border: "none",
-                borderRadius: "var(--radius-md)",
-                cursor: "pointer",
-                marginLeft: "auto",
-              }}
-            >
-              Generate Email
-            </button>
+                gap: "0.25rem",
+              }}>
+                ★ Best Match
+              </span>
+            )}
           </div>
+          <p style={{ fontSize: "0.78rem", color: "var(--muted-foreground)" }}>
+            {lab.department}
+          </p>
         </div>
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+          gap: "4px",
+        }}>
+          <span style={{
+            fontSize: "1.1rem",
+            fontWeight: 600,
+            color: scorePercent >= 70 ? "var(--gold)" : "var(--foreground)",
+            letterSpacing: "-0.02em",
+          }}>
+            {scorePercent}%
+          </span>
+          <span style={{ fontSize: "0.65rem", color: "var(--muted-foreground)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            match
+          </span>
+        </div>
+      </div>
+
+      {/* Research areas */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+        {lab.research_areas.slice(0, 4).map((area) => (
+          <span key={area} style={{
+            fontSize: "0.7rem",
+            padding: "0.2rem 0.6rem",
+            backgroundColor: "var(--muted)",
+            borderRadius: "999px",
+            color: "var(--muted-foreground)",
+            fontWeight: 500,
+          }}>
+            {area}
+          </span>
+        ))}
+      </div>
+
+      {/* About */}
+      <p style={{
+        fontSize: "0.78rem",
+        color: "var(--muted-foreground)",
+        lineHeight: 1.65,
+        display: "-webkit-box",
+        WebkitLineClamp: 3,
+        WebkitBoxOrient: "vertical",
+        overflow: "hidden",
+      }}>
+        {lab.professor_about || lab.description || "No additional information available."}
+      </p>
+
+      {/* Footer */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        {lab.contact_email && (
+          <a
+            href={`mailto:${lab.contact_email}`}
+            style={{
+              fontSize: "0.75rem",
+              color: "var(--muted-foreground)",
+              textDecoration: "none",
+            }}
+          >
+            {lab.contact_email}
+          </a>
+        )}
+        <button
+          onClick={onGenerateEmail}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            height: "32px",
+            padding: "0 1rem",
+            fontSize: "0.75rem",
+            fontWeight: 500,
+            fontFamily: "var(--font-sans)",
+            color: "var(--foreground)",
+            backgroundColor: "var(--muted)",
+            border: "1px solid var(--border)",
+            borderRadius: "var(--radius-md)",
+            cursor: "pointer",
+            marginLeft: "auto",
+          }}
+        >
+          Generate Email
+        </button>
       </div>
     </div>
   );
